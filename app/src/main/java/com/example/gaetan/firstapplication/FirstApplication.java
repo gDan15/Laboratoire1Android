@@ -82,7 +82,8 @@ public class FirstApplication extends AppCompatActivity {
             catch(IOException e){
                 e.printStackTrace();
             }
-            System.out.print(queryResults);
+            assert queryResults != null;
+            System.out.println(queryResults);
             return queryResults;
         }
         @Override
@@ -95,44 +96,7 @@ public class FirstApplication extends AppCompatActivity {
     private void makeQuery(){
         new QueryTask().execute("https://andfun-weather.udacity.com/weather");
     }
-}
-public class ItemAdapter
-        extends RecyclerView.Adapter<ItemAdapter.ItemAdapterViewHolder> {
-        private String[] mData = null;
-        public ItemAdapter() {
-        }
-        public class ItemAdapterViewHolder
-            extends RecyclerView.ViewHolder {
-            public final TextView mTextView;
-            public ItemAdapterViewHolder(View view) {
-                super(view);
-                mTextView = (TextView) view.findViewById(R.id.data);
-            }
-        }
-        @Override
-        public ItemAdapterViewHolder onCreateViewHolder
-                (ViewGroup viewGroup, int viewType) {
-        Context context = viewGroup.getContext();
-        int layoutIdForListItem = R.layout.list_item;
-        LayoutInflater inflater = LayoutInflater.from(context);
-            boolean shouldAttachToParentImmediately = false;
-            View view = inflater.inflate(layoutIdForListItem,
-                    viewGroup, shouldAttachToParentImmediately);
-            return new ItemAdapterViewHolder(view);
-        }
-        @Override
-        public void onBindViewHolder
-                (ItemAdapterViewHolder itemAdapterViewHolder, int position){
-        String dataForThisItem = mData[position];
-        itemAdapterViewHolder.mTextView.setText(dataForThisItem);
-        }
-        @Override
-        public int getItemCount() {
-            if (null == mData) return 0;
-            return mData.length;
-        }
-        public void setData(String[] data) {
-            mData = data;
-            notifyDataSetChanged();
-        }
+    public void printPressure(){
+
     }
+}
