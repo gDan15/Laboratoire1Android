@@ -47,6 +47,20 @@ public class Prevision {
         this.country = country;
         this.tempDay=tempDay;
     }
+
+    public static String[] getNames() {
+        String[] names = new String[prevision.size()];
+        for (int i=0; i<prevision.size(); i++) {
+            names[i] = prevision.get(i).name;
+        }
+
+        return names;
+    }
+
+    public static Prevision find(int index) {
+        return prevision.get(index);
+    }
+
     public ArrayList<Prevision> getArrayListPrevision(){
         return this.prevision;
     }
