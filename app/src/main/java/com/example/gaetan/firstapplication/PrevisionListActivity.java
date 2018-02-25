@@ -18,7 +18,7 @@ import android.widget.Toast;
 
 import java.io.IOException;
 
-public class StudentListActivity extends AppCompatActivity implements ItemAdapter.ItemAdapterOnClickHandler, LoaderManager.LoaderCallbacks<String> {
+public class PrevisionListActivity extends AppCompatActivity implements ItemAdapter.ItemAdapterOnClickHandler, LoaderManager.LoaderCallbacks<String> {
 
     private RecyclerView resultView;
 
@@ -29,9 +29,7 @@ public class StudentListActivity extends AppCompatActivity implements ItemAdapte
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        /*
-        * TODO : create layout "activity_prevision_list" and all of its ids.
-        * "*/
+
         setContentView(R.layout.activity_prevision_list);
 
         resultView = (RecyclerView) findViewById(R.id.resultView);
@@ -52,11 +50,9 @@ public class StudentListActivity extends AppCompatActivity implements ItemAdapte
     public boolean onOptionsItemSelected(MenuItem item) {
         int itemThatWasClickedId = item.getItemId();
         if (itemThatWasClickedId == R.id.action) {
-            /*
-            TODO : changes are to be made over here.
-            * */
-            Log.i("StudentListActivity", "Menu clicked");
-            Toast.makeText(StudentListActivity.this, "Loading...", Toast.LENGTH_SHORT).show();
+
+            Log.i("PrevisionListActivity", "Menu clicked");
+            Toast.makeText(PrevisionListActivity.this, "Loading...", Toast.LENGTH_SHORT).show();
 
 
             Bundle queryURL = new Bundle();
@@ -72,11 +68,8 @@ public class StudentListActivity extends AppCompatActivity implements ItemAdapte
     @Override
     public void onClick(int index) {
         Context context = this;
-        /*
-        * TODO : changes are to be made over here.
-        * */
 
-        Class destinationClass = StudentActivity.class;
+        Class destinationClass = PrevisionActivity.class;
         Intent intent = new Intent(context, destinationClass);
         intent.putExtra(Intent.EXTRA_INDEX, index);
         startActivity(intent);
