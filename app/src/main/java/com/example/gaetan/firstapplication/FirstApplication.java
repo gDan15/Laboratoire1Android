@@ -28,7 +28,7 @@ public class FirstApplication extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_weather);
+        setContentView(R.layout.activity_prevision);
 
         TextView city = (TextView) findViewById(R.id.city);
         TextView country = (TextView) findViewById(R.id.country);
@@ -36,12 +36,9 @@ public class FirstApplication extends AppCompatActivity {
 
         Intent intent = getIntent();
         Prevision prevision = Prevision.find(intent.getIntExtra(Intent.EXTRA_INDEX, 0));
-
-        city.setText(prevision.getCity());
-        country.setText(prevision.getCountry());
-        temperatureDay.setText(prevision.getTemperatureDay());
-
+//
+//        city.setText(prevision.getCity());
+//        country.setText(prevision.getCountry());
+//        temperatureDay.setText(prevision.getTemperatureDay());
     }
-
-
 }

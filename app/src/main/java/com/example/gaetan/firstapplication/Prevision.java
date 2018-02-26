@@ -38,8 +38,7 @@ public class Prevision {
             JSONObject weatherInformation = jsonPrevision.getJSONObject("list");
             JSONObject temperatureInformation = weatherInformation.getJSONObject("temp");
             String temperatureDay = temperatureInformation.getString("day");
-
-            prevision.add(new Prevision(nameCity, country, temperatureDay));
+            prevision.add(fixPrevision(nameCity, country, temperatureDay));
         }
     }
     Prevision(String name, String country, String tempDay){
@@ -47,7 +46,9 @@ public class Prevision {
         this.country = country;
         this.tempDay=tempDay;
     }
-
+    public static Prevision fixPrevision(String name, String country, String tempDay){
+        return new Prevision(name, country, tempDay);
+    }
     public static String[] getNames() {
         String[] names = new String[prevision.size()];
         for (int i=0; i<prevision.size(); i++) {

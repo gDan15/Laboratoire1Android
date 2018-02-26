@@ -5,6 +5,6 @@
     <item
         android:id="@+id/action"
         android:orderInCategory="1"
-        android:title="action"
+        android:title="Prevision"
         app:showAsAction="ifRoom"/>
 </menu>

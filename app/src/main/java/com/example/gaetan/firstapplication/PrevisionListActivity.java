@@ -69,7 +69,7 @@ public class PrevisionListActivity extends AppCompatActivity implements ItemAdap
     public void onClick(int index) {
         Context context = this;
 
-        Class destinationClass = PrevisionActivity.class;
+        Class destinationClass = FirstApplication.class;
         Intent intent = new Intent(context, destinationClass);
         intent.putExtra(Intent.EXTRA_INDEX, index);
         startActivity(intent);
