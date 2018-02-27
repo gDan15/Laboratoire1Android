@@ -23,21 +23,24 @@ public class Prevision {
 
     public static void parse(String json) throws JSONException {
         // the purpose of log.i is to give useful informations about the connection.
-        Log.i("Prevision", "beginning Parsing");
+        Log.i("Prevision", "=================================beginning Parsing======================================");
         prevision.clear();
-        JSONArray jsonPrevisions = new JSONArray(json);
+        JSONObject jsonPrevisions = new JSONObject(json);
 
-        for (int i=0; i<jsonPrevisions.length(); i++) {
+        JSONObject cityInformation = jsonPrevisions.getJSONObject("city");
+        String nameCity = cityInformation.getString("name");
+        String country = cityInformation.getString("country");
 
-            JSONObject jsonPrevision = jsonPrevisions.getJSONObject(i);
+        JSONArray list = cityInformation.getJSONArray("list");
 
-            JSONObject cityInformation = jsonPrevision.getJSONObject("city");
-            String nameCity = cityInformation.getString("name");
-            String country = jsonPrevision.getString("country");
 
-            JSONObject weatherInformation = jsonPrevision.getJSONObject("list");
-            JSONObject temperatureInformation = weatherInformation.getJSONObject("temp");
+        for (int i=0; i<list.length(); i++) {
+
+            JSONObject jsonPrevision = list.getJSONObject(i);
+
+            JSONObject temperatureInformation = jsonPrevision.getJSONObject("temp");
             String temperatureDay = temperatureInformation.getString("day");
+
             prevision.add(fixPrevision(nameCity, country, temperatureDay));
         }
     }
@@ -60,6 +63,10 @@ public class Prevision {
 
     public static Prevision find(int index) {
         return prevision.get(index);
+    }
+
+    public static int count(){
+        return prevision.size();
     }
 
     public ArrayList<Prevision> getArrayListPrevision(){

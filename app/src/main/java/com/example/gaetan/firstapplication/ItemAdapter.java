@@ -64,7 +64,6 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemAdapterVie
 
     @Override
     public int getItemCount() {
-//        return Student.count();
-        return 1;
+        return Prevision.count();
     }
 }

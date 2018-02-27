@@ -56,7 +56,7 @@ public class PrevisionListActivity extends AppCompatActivity implements ItemAdap
 
 
             Bundle queryURL = new Bundle();
-            queryURL.putString("URL","http://calendar.ecam.be/list/e");
+            queryURL.putString("URL","https://andfun-weather.udacity.com/weather");
 
             LoaderManager loaderManager = getSupportLoaderManager();
             loaderManager.restartLoader(QUERY_LOADER, queryURL, this);

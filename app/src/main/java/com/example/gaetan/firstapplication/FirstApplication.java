@@ -37,8 +37,8 @@ public class FirstApplication extends AppCompatActivity {
         Intent intent = getIntent();
         Prevision prevision = Prevision.find(intent.getIntExtra(Intent.EXTRA_INDEX, 0));
 //
-//        city.setText(prevision.getCity());
-//        country.setText(prevision.getCountry());
-//        temperatureDay.setText(prevision.getTemperatureDay());
+        city.setText(prevision.getCity());
+        country.setText(prevision.getCountry());
+        temperatureDay.setText(prevision.getTemperatureDay());
     }
 }
