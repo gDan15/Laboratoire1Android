@@ -57,14 +57,13 @@ public class ItemAdapter extends RecyclerView.Adapter<ItemAdapter.ItemAdapterVie
     public void onBindViewHolder
             (ItemAdapterViewHolder itemAdapterViewHolder, int position) {
 
-//        Student student = Student.find(position);
-//        String dataForThisItem = student.getName();
-//        itemAdapterViewHolder.mTextView.setText(dataForThisItem);
+        Prevision prevision = Prevision.find(position);
+        String dataForThisItem = prevision.getCity();
+        itemAdapterViewHolder.mTextView.setText(dataForThisItem);
     }
 
     @Override
     public int getItemCount() {
-//        return Student.count();
-        return 1;
+        return Prevision.count();
     }
 }

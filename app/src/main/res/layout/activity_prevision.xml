@@ -6,19 +6,19 @@
     android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/name"
+        android:id="@+id/city"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="16dp"
         android:textSize="20sp" />
     <TextView
-        android:id="@+id/matricule"
+        android:id="@+id/country"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20sp"
         android:padding="16dp"/>
     <TextView
-        android:id="@+id/division"
+        android:id="@+id/temperatureDay"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:textSize="20sp"
