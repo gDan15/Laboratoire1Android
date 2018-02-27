@@ -31,7 +31,7 @@ public class Prevision {
         String nameCity = cityInformation.getString("name");
         String country = cityInformation.getString("country");
 
-        JSONArray list = cityInformation.getJSONArray("list");
+        JSONArray list = jsonPrevisions.getJSONArray("list");
 
 
         for (int i=0; i<list.length(); i++) {
